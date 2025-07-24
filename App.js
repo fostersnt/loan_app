@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/screens/HomeScreen';
+import HomeScreen from './src/screens/dashboard/HomeScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
