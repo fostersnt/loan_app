@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { AppColors } from '../../utils/AppColors';
 
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ export default function LoginScreen({ navigation }) {
 
     return (
         <LinearGradient
-            colors={['#4c669f', '#3b5998', '#192f6a']}
+            colors={[AppColors.gradient_1, AppColors.gradient_2, AppColors.gradient_3]}
             style={styles.container}
         >
             <StatusBar barStyle="light-content" />
