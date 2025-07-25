@@ -1,9 +1,15 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from 'react-native';
 
 export default function OnboardingScreen({ navigation }) {
     return (
         <View style={styles.container}>
+            {/* Transparent StatusBar */}
+            <StatusBar
+                translucent
+                backgroundColor="transparent"
+                barStyle="dark-content" // or "light-content"
+            />
             {/* Logo */}
             <Text style={styles.logo}>🔍 QuickCash</Text>
 
@@ -23,8 +29,8 @@ export default function OnboardingScreen({ navigation }) {
                 <Text style={styles.buttonText}>Get Started</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation?.navigate('SignIn')}>
-                <Text style={styles.signInText}>Sign In</Text>
+            <TouchableOpacity onPress={() => navigation?.navigate('Login')}>
+                <Text style={styles.signInText}>Login</Text>
             </TouchableOpacity>
         </View>
     );
