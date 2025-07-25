@@ -28,7 +28,7 @@ export default function LoginScreen({ navigation }) {
 
     return (
         <LinearGradient
-            colors={[AppColors.gradient_1, AppColors.gradient_2, AppColors.gradient_3]}
+            colors={[AppColors.gradient_3, AppColors.gradient_2, AppColors.gradient_1]}
             style={styles.container}
         >
             <StatusBar barStyle="light-content" />
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         color: '#333',
     },
     button: {
-        backgroundColor: '#3b5998',
+        backgroundColor: AppColors.gradient_3,
         paddingVertical: 15,
         borderRadius: 10,
         alignItems: 'center',
