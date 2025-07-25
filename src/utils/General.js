@@ -11,10 +11,7 @@ export const LinearGradientView = ({ custom_height, custom_width }) => {
                 colors={['#2b0429ff', '#7a0f75ff', '#b606adff']}
                 // colors={[AppColors.gradient_1, AppColors.gradient_2, AppColors.gradient_3]}
                 style={{ width: custom_width, height: custom_height }}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 0 }}
             >
-                {/* Optional content inside header */}
             </LinearGradient>
         </View>
     );

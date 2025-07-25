@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from 'reac
 import { AppColors } from '../utils/AppColors';
 import FastImage from 'react-native-fast-image';
 import { LinearGradientView } from '../utils/General';
+import LinearGradient from 'react-native-linear-gradient';
 
 const img = require('../../assets/images/breaking_barriers_rafiki.png');
 
@@ -34,10 +35,10 @@ export default function OnboardingScreen({ navigation }) {
             /> */}
             <View style={{ width: '100%', alignItems: 'center' }}>
                 <FastImage
-                style={styles.fastImage}
-                source={img} // ✅ Must use require()
-                resizeMode={FastImage.resizeMode.cover}
-            />
+                    style={styles.fastImage}
+                    source={img} // ✅ Must use require()
+                    resizeMode={FastImage.resizeMode.cover}
+                />
             </View>
             {/* <Image
                 source={img} // Replace with your actual illustration
@@ -46,13 +47,21 @@ export default function OnboardingScreen({ navigation }) {
             /> */}
 
             {/* Buttons */}
-            <TouchableOpacity style={styles.button} onPress={() => navigation?.navigate('Login')}>
+            {/* <TouchableOpacity style={styles.button} onPress={() => navigation?.navigate('Login')}>
                 <Text style={styles.buttonText}>Get Started</Text>
-            </TouchableOpacity>
-
-            {/* <TouchableOpacity onPress={() => navigation?.navigate('Login')}>
-                <Text style={styles.signInText}>Login</Text>
             </TouchableOpacity> */}
+
+            <LinearGradient
+                colors={[AppColors.gradient_3, AppColors.gradient_2, AppColors.gradient_1]}
+                // colors={[AppColors.gradient_1, AppColors.gradient_2, AppColors.gradient_3]}
+                style={{ width: '100%', height: 60, justifyContent: 'center', alignItems: 'center', padding: 0, borderRadius: 50 }}
+            >
+                <View style={{ borderRadius: 20 }}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation?.navigate('Login')}>
+                        <Text style={styles.buttonText}>Get Started</Text>
+                    </TouchableOpacity>
+                </View>
+            </LinearGradient>
         </View>
     );
 }
@@ -91,11 +100,11 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     button: {
-        backgroundColor: AppColors.gradient_3,
-        paddingVertical: 15,
-        paddingHorizontal: 50,
+        // backgroundColor: AppColors.gradient_3,
+        // paddingVertical: 15,
+        // paddingHorizontal: 50,
         borderRadius: 10,
-        marginBottom: 20,
+        // marginBottom: 20,
         width: '100%',
         alignItems: 'center',
     },
