@@ -33,10 +33,21 @@ export default function LoginScreen({ navigation }) {
         >
             <StatusBar barStyle="light-content" />
             <View style={styles.card}>
-                <Text style={styles.title}>Welcome Back 👋</Text>
-                <Text style={styles.subtitle}>Login to continue</Text>
+                <Text style={styles.title}>Welcome 👋</Text>
+                <Text style={styles.subtitle}>Enter your phone number</Text>
 
                 <View style={styles.inputContainer}>
+                    <Icon name="phone" size={18} color="#666" style={styles.icon} />
+                    <TextInput
+                        style={styles.input}
+                        placeholder="phone number"
+                        placeholderTextColor="#999"
+                        keyboardType="email-address"
+                        value={email}
+                        onChangeText={setEmail}
+                    />
+                </View>
+                {/* <View style={styles.inputContainer}>
                     <Icon name="envelope" size={18} color="#666" style={styles.icon} />
                     <TextInput
                         style={styles.input}
@@ -46,9 +57,9 @@ export default function LoginScreen({ navigation }) {
                         value={email}
                         onChangeText={setEmail}
                     />
-                </View>
+                </View> */}
 
-                <View style={styles.inputContainer}>
+                {/* <View style={styles.inputContainer}>
                     <Icon name="lock" size={20} color="#666" style={styles.icon} />
                     <TextInput
                         style={styles.input}
@@ -58,19 +69,19 @@ export default function LoginScreen({ navigation }) {
                         value={password}
                         onChangeText={setPassword}
                     />
-                </View>
+                </View> */}
 
                 <TouchableOpacity style={styles.button} onPress={handleLogin}>
-                    <Text style={styles.buttonText}>LOGIN</Text>
+                    <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity
+                {/* <TouchableOpacity
                     onPress={() => navigation.navigate?.('Register')}
                 >
                     <Text style={styles.footerText}>
                         Don't have an account? <Text style={styles.link}>Sign Up</Text>
                     </Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
         </LinearGradient>
     );
