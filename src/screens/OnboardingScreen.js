@@ -1,6 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from 'react-native';
 import { AppColors } from '../utils/AppColors';
+import FastImage from 'react-native-fast-image';
+
+const img = require('../../assets/images/breaking_barriers_rafiki.png');
 
 export default function OnboardingScreen({ navigation }) {
     return (
@@ -19,20 +22,36 @@ export default function OnboardingScreen({ navigation }) {
             <Text style={styles.subText}>Safe, Simple, Secure.</Text>
 
             {/* Illustration (replace with actual image path if available) */}
+            {/* <FastImage
+                style={{ width: 100, height: 100 }}
+                source={{
+                    uri: 'https://secure-url.com/image.png',
+                    headers: { Authorization: 'Bearer token' },
+                    priority: FastImage.priority.normal,
+                }}
+                resizeMode={FastImage.resizeMode.contain}
+            /> */}
+            <View style={{ width: '100%', alignItems: 'center' }}>
+                <FastImage
+                style={styles.fastImage}
+                source={img} // ✅ Must use require()
+                resizeMode={FastImage.resizeMode.cover}
+            />
+            </View>
             {/* <Image
-                source={require('./assets/loan-illustration.png')} // Replace with your actual illustration
+                source={img} // Replace with your actual illustration
                 style={styles.image}
                 resizeMode="contain"
             /> */}
 
             {/* Buttons */}
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation?.navigate('Login')}>
                 <Text style={styles.buttonText}>Get Started</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation?.navigate('Login')}>
+            {/* <TouchableOpacity onPress={() => navigation?.navigate('Login')}>
                 <Text style={styles.signInText}>Login</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
     );
 }
@@ -64,8 +83,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: 30,
     },
-    image: {
-        width: 250,
+    fastImage: {
+        width: '100%',
         height: 250,
         marginBottom: 30,
     },
