@@ -12,11 +12,11 @@ export default function OnboardingScreen({ navigation }) {
             <Text style={styles.subText}>Safe, Simple, Secure.</Text>
 
             {/* Illustration (replace with actual image path if available) */}
-            <Image
+            {/* <Image
                 source={require('./assets/loan-illustration.png')} // Replace with your actual illustration
                 style={styles.image}
                 resizeMode="contain"
-            />
+            /> */}
 
             {/* Buttons */}
             <TouchableOpacity style={styles.button}>
