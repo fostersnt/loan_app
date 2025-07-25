@@ -31,7 +31,7 @@ export default function LoginScreen({ navigation }) {
 
     return (
         <LinearGradient
-            colors={[AppSettings.Color.gradient_3, AppSettings.Color.gradient_2, AppSettings.Color.gradient_1]}
+            colors={[AppSettings.Color.gradient_3, AppSettings.Color.white, AppSettings.Color.gradient_3]}
             style={styles.container}
         >
             <StatusBar barStyle="light-content" />
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     card: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         // borderRadius: 20,
         paddingVertical: 20,
         paddingHorizontal: 10,
@@ -94,11 +94,14 @@ const styles = StyleSheet.create({
         // width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#F2F2F2',
+        backgroundColor: '#fff',
+        // backgroundColor: '#F2F2F2',
         borderRadius: 10,
-        marginBottom: 15,
+        marginBottom: 30,
         paddingHorizontal: 10,
         // marginHorizontal: 20
+        borderWidth: 1,
+        borderColor: AppSettings.Color.gradient_3
     },
     icon: {
         marginRight: 10,
