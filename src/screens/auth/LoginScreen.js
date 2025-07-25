@@ -3,17 +3,20 @@ import {
     View,
     Text,
     TextInput,
-    TouchableOpacity,
+    // TouchableOpacity,
     StyleSheet,
     Alert,
     StatusBar,
+    Dimensions,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { AppColors } from '../../utils/AppColors';
+import { AppSettings } from '../../utils/AppSettings';
+import { CustomButton } from '../../utils/General';
 
 export default function LoginScreen({ navigation }) {
     const [phoneNumber, setPhoneNumber] = useState('');
+    const screenWidth = Dimensions.get('window').width;
 
     const handleContinue = () => {
         if (!phoneNumber) {
@@ -28,7 +31,7 @@ export default function LoginScreen({ navigation }) {
 
     return (
         <LinearGradient
-            colors={[AppColors.gradient_3, AppColors.gradient_2, AppColors.gradient_1]}
+            colors={[AppSettings.Color.gradient_3, AppSettings.Color.gradient_2, AppSettings.Color.gradient_1]}
             style={styles.container}
         >
             <StatusBar barStyle="light-content" />
@@ -42,47 +45,13 @@ export default function LoginScreen({ navigation }) {
                         style={styles.input}
                         placeholder="phone number"
                         placeholderTextColor="#999"
-                        keyboardType="email-address"
+                        keyboardType="numeric"
                         value={phoneNumber}
                         onChangeText={setPhoneNumber}
                         inputMode='numeric'
                     />
                 </View>
-                {/* <View style={styles.inputContainer}>
-                    <Icon name="envelope" size={18} color="#666" style={styles.icon} />
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Email"
-                        placeholderTextColor="#999"
-                        keyboardType="email-address"
-                        value={email}
-                        onChangeText={setEmail}
-                    />
-                </View> */}
-
-                {/* <View style={styles.inputContainer}>
-                    <Icon name="lock" size={20} color="#666" style={styles.icon} />
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Password"
-                        placeholderTextColor="#999"
-                        secureTextEntry
-                        value={password}
-                        onChangeText={setPassword}
-                    />
-                </View> */}
-
-                <TouchableOpacity style={styles.button} onPress={handleContinue}>
-                    <Text style={styles.buttonText}>Continue</Text>
-                </TouchableOpacity>
-
-                {/* <TouchableOpacity
-                    onPress={() => navigation.navigate?.('Register')}
-                >
-                    <Text style={styles.footerText}>
-                        Don't have an account? <Text style={styles.link}>Sign Up</Text>
-                    </Text>
-                </TouchableOpacity> */}
+                {/* <CustomButton width={screenWidth} btn_text={'Continue'} action={handleContinue} /> */}
             </View>
         </LinearGradient>
     );
@@ -133,10 +102,11 @@ const styles = StyleSheet.create({
         color: '#333',
     },
     button: {
-        backgroundColor: AppColors.gradient_3,
-        paddingVertical: 15,
-        borderRadius: 10,
+        backgroundColor: AppSettings.Color.gradient_3,
+        paddingVertical: AppSettings.Measurement.btn_padding_vertical,
+        borderRadius: AppSettings.Measurement.border_radius,
         alignItems: 'center',
+        height: AppSettings.Measurement.btn_height,
         marginTop: 10,
         marginBottom: 20,
     },

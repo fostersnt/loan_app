@@ -1,13 +1,17 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from 'react-native';
-import { AppColors } from '../utils/AppColors';
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar, Dimensions } from 'react-native';
+import { AppSettings } from '../utils/AppSettings';
 import FastImage from 'react-native-fast-image';
-import { LinearGradientView } from '../utils/General';
 import LinearGradient from 'react-native-linear-gradient';
+import { CustomButton } from '../utils/General';
 
 const img = require('../../assets/images/breaking_barriers_rafiki.png');
 
 export default function OnboardingScreen({ navigation }) {
+    const screenWidth = Dimensions.get('window').width;
+
+    const handleClick = () => navigation?.navigate('Login')
+
     return (
         <View style={styles.container}>
             {/* Transparent StatusBar */}
@@ -33,7 +37,7 @@ export default function OnboardingScreen({ navigation }) {
                 }}
                 resizeMode={FastImage.resizeMode.contain}
             /> */}
-            <View style={{ width: '100%', alignItems: 'center' }}>
+            <View style={{ width: screenWidth, alignItems: 'center' }}>
                 <FastImage
                     style={styles.fastImage}
                     source={img} // ✅ Must use require()
@@ -51,17 +55,16 @@ export default function OnboardingScreen({ navigation }) {
                 <Text style={styles.buttonText}>Get Started</Text>
             </TouchableOpacity> */}
 
-            <LinearGradient
-                colors={[AppColors.gradient_3, AppColors.gradient_2, AppColors.gradient_1]}
-                // colors={[AppColors.gradient_1, AppColors.gradient_2, AppColors.gradient_3]}
-                style={{ width: '100%', height: 60, justifyContent: 'center', alignItems: 'center', padding: 0, borderRadius: 50 }}
+            {/* <LinearGradient
+                colors={[AppSettings.Color.gradient_3, AppSettings.Color.gradient_2, AppSettings.Color.gradient_1]}
+                // colors={[AppSettings.Color.gradient_1, AppSettings.Color.gradient_2, AppSettings.Color.gradient_3]}
+                style={{ width: '100%', height: AppSettings.Measurement.button_height, justifyContent: 'center', alignItems: 'center', borderRadius: AppSettings.Measurement.border_radius }}
             >
-                <View style={{ borderRadius: 20 }}>
-                    <TouchableOpacity style={styles.button} onPress={() => navigation?.navigate('Login')}>
-                        <Text style={styles.buttonText}>Get Started</Text>
-                    </TouchableOpacity>
-                </View>
-            </LinearGradient>
+                <TouchableOpacity style={styles.button} onPress={() => navigation?.navigate('Login')}>
+                    <Text style={styles.buttonText}>Get Started</Text>
+                </TouchableOpacity>
+            </LinearGradient> */}
+            {/* <CustomButton width={screenWidth} btn_text={'Get Started'} action={handleClick}/> */}
         </View>
     );
 }
@@ -77,7 +80,7 @@ const styles = StyleSheet.create({
     logo: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: AppColors.main_theme,
+        color: AppSettings.Color.main_theme,
         marginBottom: 20,
     },
     headline: {
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: AppColors.gradient_3,
+        color: AppSettings.Color.gradient_3,
     },
     subText: {
         fontSize: 16,
@@ -100,10 +103,9 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     button: {
-        // backgroundColor: AppColors.gradient_3,
+        // backgroundColor: AppSettings.Color.gradient_3,
         // paddingVertical: 15,
         // paddingHorizontal: 50,
-        borderRadius: 10,
         // marginBottom: 20,
         width: '100%',
         alignItems: 'center',
@@ -114,7 +116,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
     },
     signInText: {
-        color: AppColors.main_theme,
+        color: AppSettings.Color.main_theme,
         fontSize: 16,
     },
 });

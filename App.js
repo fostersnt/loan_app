@@ -12,6 +12,8 @@ import { LinearGradientView } from './src/utils/General';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const screenWidth = Dimensions.get('window').width;
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboarding">
@@ -22,7 +24,7 @@ export default function App() {
           header: null
         }} />
         <Stack.Screen name="Dashboard" component={Dashboard} options={{
-          header: () => <LinearGradientView custom_height={100} />
+          header: () => <LinearGradientView custom_height={100} custom_width={ screenWidth } />
         }} />
         <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>

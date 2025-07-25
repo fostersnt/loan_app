@@ -1,6 +1,6 @@
 import LinearGradient from "react-native-linear-gradient"
-import { AppColors } from "./AppColors"
-import { View } from "react-native";
+import { AppColors, AppSettings } from "./AppSettings"
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export const LinearGradientView = ({ custom_height, custom_width }) => {
     return (
@@ -16,3 +16,36 @@ export const LinearGradientView = ({ custom_height, custom_width }) => {
         </View>
     );
 }
+
+export const CustomButton = ({ width, action, btn_text }) => {
+    return (
+        <LinearGradient
+            colors={[AppSettings.Color.gradient_3, AppSettings.Color.gradient_2, AppSettings.Color.gradient_1]}
+            // colors={[AppSettings.Color.gradient_1, AppSettings.Color.gradient_2, AppSettings.Color.gradient_3]}
+            style={{ width: width, height: AppSettings.Measurement.btn_height, justifyContent: 'center', alignItems: 'center', borderRadius: AppSettings.Measurement.border_radius }}
+        >
+            <TouchableOpacity style={[styles.button, { width: width }]} onPress={action}>
+                <Text style={styles.buttonText}>{btn_text}</Text>
+            </TouchableOpacity>
+        </LinearGradient>
+    );
+}
+
+const styles = StyleSheet.create({
+    button: {
+        // backgroundColor: AppSettings.Color.gradient_3,
+        // paddingVertical: 15,
+        // paddingHorizontal: 50,
+        // marginBottom: 20,
+        alignItems: 'center',
+    },
+    buttonText: {
+        // backgroundColor: AppSettings.Color.gradient_3,
+        // paddingVertical: 15,
+        // paddingHorizontal: 50,
+        // marginBottom: 20,
+        fontWeight: "bold",
+        color: AppSettings.Color.white,
+        alignItems: 'center',
+    }
+})
