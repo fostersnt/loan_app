@@ -22,9 +22,7 @@ export default function App() {
           header: null
         }} />
         <Stack.Screen name="Dashboard" component={Dashboard} options={{
-          // title: "Dashboard",
-          // header: () => (<View style={styles.header}></View>)
-          header: () => <LinearGradientView custom_height={100}/>
+          header: () => <LinearGradientView custom_height={100} />
         }} />
         <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>

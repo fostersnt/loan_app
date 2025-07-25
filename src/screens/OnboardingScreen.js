@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from 'react-native';
 import { AppColors } from '../utils/AppColors';
 import FastImage from 'react-native-fast-image';
+import { LinearGradientView } from '../utils/General';
 
 const img = require('../../assets/images/breaking_barriers_rafiki.png');
 
@@ -15,7 +16,7 @@ export default function OnboardingScreen({ navigation }) {
                 barStyle="dark-content" // or "light-content"
             />
             {/* Logo */}
-            <Text style={styles.logo}>🔍 QuickCash</Text>
+            {/* <Text style={styles.logo}>🔍 QuickCash</Text> */}
 
             {/* Headline */}
             <Text style={styles.headline}>Get Loans Instantly</Text>
@@ -71,10 +72,11 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     headline: {
+        marginBottom: 20,
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: '#111',
+        color: AppColors.gradient_3,
     },
     subText: {
         fontSize: 16,
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     button: {
-        backgroundColor: AppColors.main_theme,
+        backgroundColor: AppColors.gradient_3,
         paddingVertical: 15,
         paddingHorizontal: 50,
         borderRadius: 10,
