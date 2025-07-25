@@ -64,7 +64,9 @@ export default function OnboardingScreen({ navigation }) {
                     <Text style={styles.buttonText}>Get Started</Text>
                 </TouchableOpacity>
             </LinearGradient> */}
-            {/* <CustomButton width={screenWidth} btn_text={'Get Started'} action={handleClick}/> */}
+            <View style={{width: screenWidth, alignItems: 'center'}}>
+                <CustomButton width={(screenWidth - 20)} btn_text={'Get Started'} action={handleClick}/>
+            </View>
         </View>
     );
 }

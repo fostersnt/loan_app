@@ -12,7 +12,7 @@ export const AppSettings = {
     Measurement: {
         border_radius: 10,
         btn_height: 60,
-        btn_padding_vertical: 15,
-        btn_padding_horizontal: 20,
+        btn_padding_vertical: 20,
+        btn_padding_horizontal: 10,
     }
 }

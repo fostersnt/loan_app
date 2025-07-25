@@ -42,7 +42,7 @@ export default function LoginScreen({ navigation }) {
                 <View style={styles.inputContainer}>
                     <Icon name="phone" size={18} color="#666" style={styles.icon} />
                     <TextInput
-                        style={styles.input}
+                        style={[styles.input, {width: (screenWidth - 40)}]}
                         placeholder="phone number"
                         placeholderTextColor="#999"
                         keyboardType="numeric"
@@ -50,6 +50,9 @@ export default function LoginScreen({ navigation }) {
                         onChangeText={setPhoneNumber}
                         inputMode='numeric'
                     />
+                </View>
+                <View style={{ width: '100%', alignItems: 'center' }}>
+                    <CustomButton width={(screenWidth - 40)} btn_text={'Get Started'} action={handleContinue} />
                 </View>
                 {/* <CustomButton width={screenWidth} btn_text={'Continue'} action={handleContinue} /> */}
             </View>
@@ -61,17 +64,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        padding: 20,
+        padding: 10,
     },
     card: {
         backgroundColor: 'white',
-        borderRadius: 20,
+        // borderRadius: 20,
         padding: 30,
-        shadowColor: '#000',
+        shadowColor: '#fff',
+        // shadowColor: '#000',
         shadowOpacity: 0.2,
-        shadowOffset: { width: 0, height: 10 },
-        shadowRadius: 10,
-        elevation: 10,
+        // shadowOffset: { width: 0, height: 10 },
+        shadowRadius: 30,
+        elevation: 30,
     },
     title: {
         fontSize: 26,
@@ -85,6 +89,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     inputContainer: {
+        // width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#F2F2F2',

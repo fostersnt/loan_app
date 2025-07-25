@@ -21,10 +21,9 @@ export const CustomButton = ({ width, action, btn_text }) => {
     return (
         <LinearGradient
             colors={[AppSettings.Color.gradient_3, AppSettings.Color.gradient_2, AppSettings.Color.gradient_1]}
-            // colors={[AppSettings.Color.gradient_1, AppSettings.Color.gradient_2, AppSettings.Color.gradient_3]}
             style={{ width: width, height: AppSettings.Measurement.btn_height, justifyContent: 'center', alignItems: 'center', borderRadius: AppSettings.Measurement.border_radius }}
         >
-            <TouchableOpacity style={[styles.button, { width: width }]} onPress={action}>
+            <TouchableOpacity style={[styles.button, { width: width, paddingVertical: AppSettings.Measurement.btn_padding_vertical }]} onPress={action}>
                 <Text style={styles.buttonText}>{btn_text}</Text>
             </TouchableOpacity>
         </LinearGradient>
