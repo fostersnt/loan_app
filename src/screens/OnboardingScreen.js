@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from 'react-native';
+import { AppColors } from '../utils/AppColors';
 
 export default function OnboardingScreen({ navigation }) {
     return (
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     logo: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#3B82F6',
+        color: AppColors.main_theme,
         marginBottom: 20,
     },
     headline: {
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     button: {
-        backgroundColor: '#3B82F6',
+        backgroundColor: AppColors.main_theme,
         paddingVertical: 15,
         paddingHorizontal: 50,
         borderRadius: 10,
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
     },
     signInText: {
-        color: '#3B82F6',
+        color: AppColors.main_theme,
         fontSize: 16,
     },
 });
