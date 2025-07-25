@@ -13,17 +13,17 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { AppColors } from '../../utils/AppColors';
 
 export default function LoginScreen({ navigation }) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
 
-    const handleLogin = () => {
-        if (!email || !password) {
-            Alert.alert('Error', 'Please enter both email and password.');
+    const handleContinue = () => {
+        if (!phoneNumber) {
+            Alert.alert('Error', 'Please enter your phone number.');
             return;
         }
 
         // Handle login logic here
-        Alert.alert('Login Success', `Welcome back, ${email}!`);
+        Alert.alert('Login Success', `Welcome back, ${phoneNumber}!`);
+        navigation?.navigate('Dashboard');
     };
 
     return (
@@ -43,8 +43,8 @@ export default function LoginScreen({ navigation }) {
                         placeholder="phone number"
                         placeholderTextColor="#999"
                         keyboardType="email-address"
-                        value={email}
-                        onChangeText={setEmail}
+                        value={phoneNumber}
+                        onChangeText={setPhoneNumber}
                         inputMode='numeric'
                     />
                 </View>
@@ -72,7 +72,7 @@ export default function LoginScreen({ navigation }) {
                     />
                 </View> */}
 
-                <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                <TouchableOpacity style={styles.button} onPress={handleContinue}>
                     <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
 

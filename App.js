@@ -2,10 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/screens/dashboard/HomeScreen';
+// import HomeScreen from './src/screens/dashboard/Dashboard';
 import DetailsScreen from './src/screens/DetailsScreen';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
+import Dashboard from './src/screens/dashboard/Dashboard';
+import { LinearGradientView } from './src/utils/General';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,14 +18,15 @@ export default function App() {
         <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{
           header: null
         }} />
-        <Stack.Screen name="Home" component={HomeScreen} options={{
-          title: "Dashboard",
-          // header: null
-        }} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Login" component={LoginScreen} options={{
           header: null
         }} />
+        <Stack.Screen name="Dashboard" component={Dashboard} options={{
+          // title: "Dashboard",
+          // header: () => (<View style={styles.header}></View>)
+          header: () => <LinearGradientView custom_height={100}/>
+        }} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -36,4 +39,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  header: {
+    height: 100,
+    backgroundColor: "#e65f06ff"
+  }
 });
