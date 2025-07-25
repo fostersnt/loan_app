@@ -21,7 +21,9 @@ export default function App() {
           // header: null
         }} />
         <Stack.Screen name="Details" component={DetailsScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{
+          header: null
+        }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
