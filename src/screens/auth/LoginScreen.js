@@ -45,6 +45,7 @@ export default function LoginScreen({ navigation }) {
                         keyboardType="email-address"
                         value={email}
                         onChangeText={setEmail}
+                        inputMode='numeric'
                     />
                 </View>
                 {/* <View style={styles.inputContainer}>
