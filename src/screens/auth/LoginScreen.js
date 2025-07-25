@@ -52,7 +52,7 @@ export default function LoginScreen({ navigation }) {
                     />
                 </View>
                 <View style={{ width: '100%', alignItems: 'center' }}>
-                    <CustomButton width={(screenWidth - 40)} btn_text={'Get Started'} action={handleContinue} />
+                    <CustomButton width={(screenWidth - 40)} btn_text={'Continue'} action={handleContinue} />
                 </View>
                 {/* <CustomButton width={screenWidth} btn_text={'Continue'} action={handleContinue} /> */}
             </View>
