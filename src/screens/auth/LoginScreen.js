@@ -39,7 +39,7 @@ export default function LoginScreen({ navigation }) {
                 <Text style={styles.title}>Welcome 👋</Text>
                 <Text style={styles.subtitle}>Enter your phone number</Text>
 
-                <View style={styles.inputContainer}>
+                <View style={[styles.inputContainer, {width: (screenWidth - 40)}]}>
                     <Icon name="phone" size={18} color="#666" style={styles.icon} />
                     <TextInput
                         style={[styles.input, {width: (screenWidth - 40)}]}
@@ -69,13 +69,15 @@ const styles = StyleSheet.create({
     card: {
         backgroundColor: 'white',
         // borderRadius: 20,
-        padding: 30,
+        paddingVertical: 20,
+        paddingHorizontal: 10,
+        paddingBottom: 20,
         shadowColor: '#fff',
         // shadowColor: '#000',
         shadowOpacity: 0.2,
         // shadowOffset: { width: 0, height: 10 },
-        shadowRadius: 30,
-        elevation: 30,
+        shadowRadius: 10,
+        elevation: 10,
     },
     title: {
         fontSize: 26,
@@ -96,6 +98,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 15,
         paddingHorizontal: 10,
+        // marginHorizontal: 20
     },
     icon: {
         marginRight: 10,
